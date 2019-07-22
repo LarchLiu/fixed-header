@@ -1,3 +1,7 @@
+[![Image from Gyazo](https://i.gyazo.com/9ba5b1c59cdd50467c042e691c421d3e.gif)](https://gyazo.com/9ba5b1c59cdd50467c042e691c421d3e)  
+
+[![Edit fixed-header demo](https://codesandbox.io/static/img/play-codesandbox.svg?style=flat-square)](https://codesandbox.io/s/fixedheader-n6w0d)
+
 ## Introduction
 
  * 支持传递组件的内部 class name 来 fixed 内部组件
