@@ -7,7 +7,7 @@
  
 ## Usage
 
-####页面只有一个 FixedHeader
+#### 页面只有一个 FixedHeader
 
 ```
 <template>
@@ -40,7 +40,7 @@ export default {
 </style>
 ```
 
-####页面如有多个 FixedHeader  
+#### 页面如有多个 FixedHeader  
 其中 child-class-name 传入的是已封装的 el-tabs 的头部 class name，通过此 name 固定 tab header
 
 ```
@@ -94,14 +94,14 @@ export default {
 }
 </style>
 ```
-####props  
-#####idName  
+#### props  
+##### idName  
 * 需要 fixed 组件 id 名称，用于定位组件  
 * default: element  
-#####styleClassName
+##### styleClassName
 * 组件 fixed 时的样式名称  
 * default: fixed-header
-#####childClassName
+##### childClassName
 * 需要 fixed 组件中的子组件 class name, 用于定位到此子组件
 * default: null
 
