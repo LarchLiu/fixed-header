@@ -25,7 +25,7 @@
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
-import FixedHeader from './components/FixedHeader'
+import FixedHeader from '@/components/FixedHeader'
 
 export default {
   name: 'app',
