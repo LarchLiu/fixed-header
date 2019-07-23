@@ -42,7 +42,7 @@ export default {
   },
   computed: {
     offset_top() {
-      return this.fixed_element && this.fixed_element.offsetTop
+      return this.fixed_element && this.getElementToPageTop(this.fixed_element)
     },
     id_name() {
       return this.id_name_pre + this.idName
@@ -73,6 +73,15 @@ export default {
     window.removeEventListener('scroll', this.handleScroll)
   },
   methods: {
+    getElementToPageTop(el) {
+      let top = el.offsetTop
+      el = el.offsetParent
+      while (el) {
+        top += el.offsetTop
+        el = el.offsetParent
+      }
+      return top
+    },
     addFixedClass(dom, cls) {
       const arr_class_name = dom.className.split(' ')
       const index = this.arrIndexOf(arr_class_name, cls)
@@ -100,9 +109,7 @@ export default {
     },
     handleScroll() {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
-      if (this.offset_top) {
-        this.fixed = scrollTop > this.offset_top
-      }
+      this.fixed = scrollTop > this.offset_top
     }
   }
 }
