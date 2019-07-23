@@ -7,6 +7,7 @@
 </template>
 
 <script>
+import _ from 'lodash'
 /**
  * 支持传递组件的内部 class name 来 fixed 内部组件
  * 同一页面如有多个 FixedHeader 请为每个组件传递 idName, 因为是通过 id 找到具体的组件, 如果 id 相同多个组件无法区分
@@ -56,7 +57,7 @@ export default {
     }
   },
   mounted() {
-    window.addEventListener('scroll', this.handleScroll)
+    window.addEventListener('scroll', _.throttle(this.handleScroll, 50))
     const element = document.querySelector(`#${this.id_name}`)
     if (this.childClassName) {
       const child_element = element.querySelector(`.${this.childClassName}`)
@@ -74,9 +75,8 @@ export default {
   },
   methods: {
     getElementToPageTop(el) {
-      let top = el.offsetTop
-      el = el.offsetParent
-      while (el) {
+      let top = 0
+      while (el !== window.document.body && el) {
         top += el.offsetTop
         el = el.offsetParent
       }
