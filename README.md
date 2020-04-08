@@ -34,7 +34,7 @@ export default {
 
 <style>
 .fixed {
-    /deep/.vue-fixed-header {
+    /deep/.fixed-header {
       position: fixed;
       left: 0;
       top: 0;
@@ -81,7 +81,7 @@ export default {
 
 <style>
 .fixed {
-    /deep/.vue-fixed-header {
+    /deep/.fixed-header {
       position: fixed;
       left: 0;
       top: 0;
